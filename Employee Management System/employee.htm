@@ -1,0 +1,57 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+</head>
+<style>
+    body {
+        text-align: center;
+    }
+</style>
+<body>
+    <h3>Welcome to Employee management form!!!</h3>
+    <br>
+    <br>
+    <br>
+    <form id="employeeForm">
+        First Name: <input type="text" name="firstName"><br><br>
+        Last Name: <input type="text" name="lastName"><br><br>
+        Email: <input type="text" name="email"><br><br>
+        <br>
+        <button type="submit">Add Employee</button>
+    </form>
+    <script>
+        document.getElementById("employeeForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+
+            // Create an object to store form data
+            const formData = {
+                firstName: this.elements['firstName'].value,
+                lastName: this.elements['lastName'].value,
+                email: this.elements['email'].value
+            };
+
+            // Send a POST request to the /addEmployee endpoint of the backend
+            fetch("http://localhost:8080/addEmployee", {
+                method: 'POST', // HTTP method
+                headers: {
+                    'Content-Type': 'application/json' // Set the content type to JSON
+                },
+                body: JSON.stringify(formData) // Convert data to JSON string
+            })
+            .then(response => {
+                if (response.ok) { // If the response status is in the range 200-299
+                    alert('Employee added successfully'); // Show success message
+                } else {
+                    alert('Failed to add employee'); // Show error message
+                }
+            })
+            .catch(error => {
+                console.error('Error adding employee:', error); // Log error to the console
+                alert('Failed to add employee'); // Show error message
+            });
+        });
+    </script>
+</body>
+</html>
