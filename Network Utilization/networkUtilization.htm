@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Network Utilization</title>
+        <h3>Network Utilization</h3>
+    </head>
+    <style>
+        h3 {
+            background-color: #4CAF50;
+            color: white; 
+            padding: 10px; 
+            border-radius: 5px; 
+            text-align: center; 
+        }
+        select {
+            padding: 8px;
+            font-size: 16px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #getReport {
+            padding: 8px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 2%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <body>
+        <select id="cityList" name="cityList" required>
+            <option disabled selected>Select City</option>
+        </select>
+        <select id="typeList" name="typeList" required style="margin-left: 1%;">
+            <option disabled selected>Select Type</option>
+        </select>
+        <select id="valueList" name="valueList" required style="margin-left: 1%;">
+            <option disabled selected>Select Value</option>
+        </select>
+        <button id="getReport" style="margin-left:1%">GET REPORT</button>
+        <div id="table"></div>
+        <script src="C:\Users\018055\Documents\Sify\Automation_testing\Javascript\networkUtilization.js">
+        </script>
+    </body>
+</html>
