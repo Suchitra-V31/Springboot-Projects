@@ -39,11 +39,8 @@ Database Operations:
 	- Each method corresponds to a specific type of data retrieval:
 	
 		=> getCity(): Retrieves a list of cities along with their codes from the database.
-		
-		
 		=> getType(): Retrieves a list of types along with their codes from the database.
 		=> getValue(int cityCode, int typeCode): Retrieves a list of values based on the provided city code and type code from the database.
-		
 		=> getUtilization(int city_code, int type_code, String value): Retrieves utilization data based on the provided city code, type code, and value from the database.
 		
 	- These methods execute SQL queries using JDBC to interact with the database and retrieve data.
