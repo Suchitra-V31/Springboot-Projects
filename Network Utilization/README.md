@@ -48,7 +48,6 @@ Database Operations:
 Error Handling:
 
 	- The methods include error handling to catch any exceptions that may occur during database operations. 
-	
 	- Exceptions are logged to the console for debugging purposes.
 	
 Connection Management:
